@@ -1,0 +1,21 @@
+﻿@model IEnumerable<WorkoutKeeper.Models.ExerViewModel>
+<div class="exers_List">
+    <button type="button" class="button_return" onclick='javascript:history.go(-1)'>Вернуться</button>
+    <table class="exers_table">
+        @foreach (var day in Model)
+        {
+            <td colspan="2" class="exers_table_day"> @day.Day день</td>
+
+            @foreach (var ex in day.Exercises)
+            {
+                <tr>
+                    <td class="exers_table_td"> @ex.Name</td>
+                    <td class="exers_table_td"> @ex.ApproachesNum подхода</td>
+                </tr>
+
+            }
+        }
+        @*TODO:добавить справа от упражнений картиночки(например спина, грудь и т.д.)*@
+    </table>
+
+</div>

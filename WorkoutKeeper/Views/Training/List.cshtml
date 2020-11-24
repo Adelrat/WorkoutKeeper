@@ -1,0 +1,17 @@
+﻿@model IEnumerable<WorkoutKeeper.Models.Training>
+<img src="~/images/FRS_Racool_20159.jpg" class="fitonyash">
+<div class="All_Courses">
+    @foreach (var tran in Model)
+    {
+        <form method="post" asp-controller="Training" asp-action="Exercises" class="Single_Course">
+            <input type="hidden" name="TrainingId" value="@tran.Id" />
+            <button class="Traning_name">
+                 @tran.Name
+            </button>
+            <div class="Traning_level">
+                @tran.Level
+            </div>
+
+        </form>
+    }
+</div>

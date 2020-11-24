@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-v4-rtl/css/bundle.min.css" />
+    @*<style>
+        * {
+        margin: 0;
+        padding: 0;
+        }
+        </style>*@
+</head>
+<body class="page">
+    <div class="header_layout" style="color:aquamarine">
+        <div class="header_ico ">
+            <img src="~/images/GK_ico.png" class="dumbless" alt="GK" />
+        </div>
+        <div class="header_brand ">
+            Add_Execise
+        </div>
+    </div>
+    <div class="renderdiv" style="margin:10px">
+        @RenderBody()
+    </div>
+</body>
+</html>

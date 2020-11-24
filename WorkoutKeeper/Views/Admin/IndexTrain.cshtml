@@ -1,0 +1,15 @@
+﻿@model IEnumerable<string>
+@{
+    ViewBag.Title = "Edit Trainigs";
+    Layout = "_AdminLayout";
+}
+<ul class="list-group">
+    @foreach (var t in Model)
+    {
+    <li class="list-group-item">
+        <a asp-controller="Admin" asp-action="IndexExercises" asp-route-TrainingName="@t" >@t</a>
+    </li>
+        }
+</ul>
+
+<a class="btn btn-primary btn_return" asp-controller="Admin" asp-action="Create">Add-Execise</a>

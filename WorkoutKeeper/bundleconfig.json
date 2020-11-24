@@ -1,0 +1,11 @@
+[
+  {
+    "outputFileName": "wwwroot/lib/bootstrap-v4-rtl/css/bundle.css",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap-v4-rtl/css/bootstrap.css",
+      "wwwroot/lib/bootstrap-v4-rtl/css/bootstrap-grid.css",
+      "wwwroot/lib/bootstrap-v4-rtl/css/bootstrap-reboot.css",
+      "wwwroot/lib/bootstrap-v4-rtl/css/bootstrap-rtl.css"
+    ]
+  }
+]
