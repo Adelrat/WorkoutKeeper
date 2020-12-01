@@ -8,7 +8,7 @@ namespace WorkoutKeeper.Models
     public class ExerViewModel
     {
         public string TrainingName { get; set; }
-        public string Day { get; set; }
+        public int Day { get; set; }
         public List<Exercise> Exercises { get; set; }
     }
 }

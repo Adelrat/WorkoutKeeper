@@ -11,7 +11,9 @@ namespace WorkoutKeeper.Models
             IQueryable<Exercise> Exercises { get; }
             IQueryable<Day> Days { get; }
             
-            void DeleteExercise(Exercise exercise, string dayName, string trainingName);
-            void SaveExercise(Exercise exercise, string dayName, string trainingName);
+            void DeleteExercise(Exercise exercise, int dayName, string trainingName);
+            void SaveExercise(Exercise exercise, int dayName, string trainingName);
+        void AddTraining(string TrainingName, string level);
+        void DeleteTraining(string TrainingName);
     }
 }

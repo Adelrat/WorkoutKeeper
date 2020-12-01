@@ -1,0 +1,29 @@
+﻿@*@model WorkoutKeeper.Models.Training*@
+@{
+    ViewBag.Title = "Edit product";
+    Layout = "_AdminLayout";
+}
+<form asp-controller="Admin" asp-action="AddTraining" method="post">
+    <div class="form-group">
+        <label>название</label>
+        <input type="text" name="TrainingName" /><br />
+    </div>
+    <div class="form-group">
+        <label>уровень</label>
+        <input type="text" name="level" /><br />
+    </div>
+    @*<div class="form-group">
+            <label asp-for="Name">Название</label>
+            <div><span asp-validation-for="Name" class="text-danger"></span></div>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Level">Уровень</label>
+            <div><span asp-validation-for="Level" class="text-danger"></span></div>
+            <input asp-for="Level" class="form-control" />
+        </div>*@
+    <div class="text-center">
+        <button class="btn btn-primary" asp-action="AddTraining">Save</button>
+        <button type="button" class="btn btn-secondary" onclick='javascript:history.go(-1)'>Вернуться</button>
+    </div>
+</form>

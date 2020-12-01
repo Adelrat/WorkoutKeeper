@@ -20,12 +20,48 @@ namespace WorkoutKeeper.Models
 
         public IQueryable<Exercise> Exercises => context.Exercises;
         public IQueryable<Day> Days => context.Days;
+        public void DeleteTraining(string TrainingName)
+        {
+            if (TrainingName != null)
+            {
+                //var AllExercise = context.Exercises.Include(e => e.DayExercise).ThenInclude(e => e.Day).ToList();
+                //var TrainingId = context.Trainings.FirstOrDefault(tr => tr.Name == TrainingName).Id;
+                //var ExerciseToDelete =AllExercise.Where(exer=>exer.).ToList();
+                var AllDay = context.Days.Include(d => d.DayExercise).ThenInclude(c => c.Exercise).ToList();
+                var TrainingId = context.Trainings.FirstOrDefault(tr => tr.Name == TrainingName).Id;
+                var DayToDelete = AllDay.Where(day => day.TrainingId == TrainingId).ToList();
+                foreach (var day in DayToDelete)
+                {
+                    var DayExerciseToDelete = day.DayExercise.ToList();
+                    foreach(var de in DayExerciseToDelete)
+                    {
+                        var ExerciseToDelete = de.Exercise;
+                        DeleteExercise(ExerciseToDelete, day.TDay, TrainingName);
+                    }
+                }
 
-        public void DeleteExercise(Exercise exercise, string dayName, string trainingName)
+            }
+        }
+        public void AddTraining(string TrainingName,string level)
+        {
+            if (TrainingName != null && level != null)
+            {
+                Training training = new Training { Name = TrainingName, Level = level };
+                context.Trainings.Add(training);
+                context.SaveChanges();
+                //начальное заполнение списка упражнений
+                var FirstExercise = new Exercise { Name = "Новое упражнение", ApproachesNum = "23", Description = "новое упражнение" };
+                SaveExercise(FirstExercise, 1, TrainingName);
+            }
+
+        }
+
+        public void DeleteExercise(Exercise exercise, int dayName, string trainingName)
         {
             var DbEntryEx = context.Exercises.FirstOrDefault(ex => ex.Name == exercise.Name);
             if (DbEntryEx != null)
             {
+                //TODO:Разобраться с ошибками, исправить css
                 var AllDay = context.Days.Include(d => d.DayExercise).ThenInclude(c => c.Exercise).ToList();
                 var DayEx = AllDay.FirstOrDefault(day => day.TDay == dayName && day.Training.Name == trainingName)
                     .DayExercise.FirstOrDefault(ex => ex.ExerciseId == DbEntryEx.Id);
@@ -49,12 +85,15 @@ namespace WorkoutKeeper.Models
             }
 
         }
+
+       
+
         //добавление/изменение упражнения
-        public void SaveExercise(Exercise exercise,string dayName,string trainingName)
+        public void SaveExercise(Exercise exercise,int dayName,string trainingName)
         {
             //Получаем день, чтобы позже проверить нужно ли добавлять dayex или мы изменяем существуещее
             List<Day> Alldays = context.Days.Include(t => t.DayExercise).ThenInclude(c => c.Exercise).ToList();
-            object IsNewDayEx = null;
+            DayExercise IsDeleteDayEx=null;
 
             var DbEntryEx = context.Exercises.FirstOrDefault(e => e.Name == exercise.Name);
             //Добавляем упражнение    
@@ -68,10 +107,17 @@ namespace WorkoutKeeper.Models
                 DbEntryEx.Name = exercise.Name;
                 DbEntryEx.Description = exercise.Description;
                 DbEntryEx.ApproachesNum = exercise.ApproachesNum;
-                IsNewDayEx=Alldays.FirstOrDefault(day => day.TDay == dayName).DayExercise.FirstOrDefault(e => e.ExerciseId == DbEntryEx.Id);
+                var IsDeleteDay = context.Days.Where(day => day.TDay == dayName)
+                                                .FirstOrDefault(day => day.Training.Name == trainingName);
+                if (IsDeleteDay != null)
+                {
+                    IsDeleteDayEx = IsDeleteDay.DayExercise.FirstOrDefault(t => t.DayId > 0);
+                }
+                //IsNewDayEx =Alldays.FirstOrDefault(day => day.TDay == dayName).DayExercise.FirstOrDefault(e => e.ExerciseId == DbEntryEx.Id);
             }
             context.SaveChanges();
             //добавляем день
+            //Если день не указан вообще значит его добавляем в день который редактируем(Реализовать!)
             if (dayName != null)
             {         
             var DbEntryDay = context.Days.FirstOrDefault(d => d.TDay == dayName && d.Training.Name == trainingName);
@@ -88,7 +134,7 @@ namespace WorkoutKeeper.Models
             }
             context.SaveChanges();
                 //Если dayEx уже существует, то заканчиваем добавление
-                if (IsNewDayEx == null) { 
+                if (IsDeleteDayEx == null) { 
 
             var exId = context.Exercises.FirstOrDefault(e => e.Name == exercise.Name).Id;
             //привязка нового(отредактированного) упражнения к старому дню

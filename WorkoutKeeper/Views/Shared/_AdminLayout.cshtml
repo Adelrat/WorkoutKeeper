@@ -17,11 +17,11 @@
 <body class="page">
     <div class="header_layout" style="color:aquamarine">
         <div class="header_ico ">
-            <img src="~/images/GK_ico.png" class="dumbless" alt="GK" />
+            <a href="@Url.Action("List", "Training")"><img src="~/images/GK_ico.png" class="dumbless" alt="GK"></a>
         </div>
         <div class="header_brand ">
-            Add_Execise
-        </div>
+            <a asp-controller="Admin" asp-action="indexTrain" class="header_brand_text">Add_Execise</a>
+</div>
     </div>
     <div class="renderdiv" style="margin:10px">
         @RenderBody()

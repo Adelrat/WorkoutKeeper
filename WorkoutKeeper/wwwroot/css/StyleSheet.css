@@ -51,6 +51,10 @@ body, html {
     height: 50%;
     margin: 20px;
 }
+.header_brand_text {
+    text-decoration: none;
+    color:black;
+}
 .Single_Course {
     width: 40%;
     height: 348px;
