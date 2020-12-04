@@ -39,6 +39,8 @@ namespace WorkoutKeeper.Models
                         DeleteExercise(ExerciseToDelete, day.TDay, TrainingName);
                     }
                 }
+                context.Remove(context.Trainings.FirstOrDefault(Training => Training.Id == TrainingId));
+                context.SaveChanges();
 
             }
         }
@@ -61,9 +63,9 @@ namespace WorkoutKeeper.Models
             var DbEntryEx = context.Exercises.FirstOrDefault(ex => ex.Name == exercise.Name);
             if (DbEntryEx != null)
             {
-                //TODO:Разобраться с ошибками, исправить css
                 var AllDay = context.Days.Include(d => d.DayExercise).ThenInclude(c => c.Exercise).ToList();
-                var DayEx = AllDay.FirstOrDefault(day => day.TDay == dayName && day.Training.Name == trainingName)
+                var TrainingId = context.Trainings.FirstOrDefault(train => train.Name == trainingName).Id;
+                var DayEx = AllDay.FirstOrDefault(day => day.TDay == dayName && day.TrainingId == TrainingId)
                     .DayExercise.FirstOrDefault(ex => ex.ExerciseId == DbEntryEx.Id);
                 DbEntryEx.DayExercise.Remove(DayEx);
 

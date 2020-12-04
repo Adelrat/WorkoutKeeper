@@ -63,10 +63,15 @@ namespace WorkoutKeeper
                     name: null,
                     template: "{controller=Admin}/{action=IndexTrain}"
                     );
+                //скрыть админку!
                 routes.MapRoute(
                     name: null,
                     template: "{controller=Admin}/{action=IndexExercises}"
-                    ); 
+                    );
+                routes.MapRoute(
+                    name: null,
+                    template: "{controller=CustomTraining}/{action=Index}"
+                    );
                 //routes.MapRoute(
                 //     name: null,
                 //     template: "{controller=Admin}/{action=Create}"

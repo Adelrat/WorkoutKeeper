@@ -20,7 +20,13 @@
             </div>
             <div class="header_brand ">
                 <a asp-controller="Training" asp-action="List" class="header_brand_text" >WORKOUT KEEPER</a>
-        </div>
+            </div>
+            <div>
+                <a asp-controller="CustomTraining" asp-action="Index" class="header_custom">Ваши программы</a>
+            </div>
+            @*<div class="header_custom">
+                Вход
+            </div>*@
     </div>
     <div class="renderdiv">
         @RenderBody()

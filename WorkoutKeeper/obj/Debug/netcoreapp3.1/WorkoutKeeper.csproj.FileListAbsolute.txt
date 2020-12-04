@@ -79,3 +79,4 @@ C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\bin\Debug\netcoreapp3.1\lib
 C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\Razor\Views\Admin\IndexExercises.cshtml.g.cs
 C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\Razor\Views\Admin\IndexTrain.cshtml.g.cs
 C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AddTraining.cshtml.g.cs
+C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\Razor\Views\CustomTraining\Index.cshtml.g.cs
