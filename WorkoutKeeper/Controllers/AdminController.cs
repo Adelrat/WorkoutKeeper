@@ -12,7 +12,7 @@ namespace WorkoutKeeper.Controllers
 {
     public class AdminController : Controller
     {
-        private ITrainingRepository repository;
+        private readonly ITrainingRepository repository;
         //private List<Training> tran;
         List<ExerViewModel> ExersView = new List<ExerViewModel>();
         public AdminController(ITrainingRepository repos)

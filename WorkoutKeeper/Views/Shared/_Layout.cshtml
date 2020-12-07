@@ -15,6 +15,7 @@
 </head>
 <body class="page">
         <div class="header_layout" >
+            @*TODO:подвравить все это говно*@
             <div class="header_ico ">
                 <a href="@Url.Action("List", "Training")"><img src="~/images/GK_ico.png" class="dumbless" alt="GK"></a>
             </div>
@@ -24,9 +25,9 @@
             <div>
                 <a asp-controller="CustomTraining" asp-action="Index" class="header_custom">Ваши программы</a>
             </div>
-            @*<div class="header_custom">
-                Вход
-            </div>*@
+            <div>
+                <a asp-controller="Account" asp-action="Register" class="header_custom">Вход</a>
+            </div>
     </div>
     <div class="renderdiv">
         @RenderBody()

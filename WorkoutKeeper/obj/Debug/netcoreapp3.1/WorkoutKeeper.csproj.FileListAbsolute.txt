@@ -54,8 +54,6 @@ C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\bin\Debug\netcoreapp3.1\Wor
 C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\bin\Debug\netcoreapp3.1\WorkoutKeeper.dll
 C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\bin\Debug\netcoreapp3.1\WorkoutKeeper.pdb
 C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\WorkoutKeeper.csproj.CoreCompileInputs.cache
-C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\WorkoutKeeper.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\WorkoutKeeper.dll
 C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\WorkoutKeeper.pdb
 C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\WorkoutKeeper.genruntimeconfig.cache
@@ -80,3 +78,11 @@ C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\Raz
 C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\Razor\Views\Admin\IndexTrain.cshtml.g.cs
 C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AddTraining.cshtml.g.cs
 C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\Razor\Views\CustomTraining\Index.cshtml.g.cs
+C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\WorkoutKeeper.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\WorkoutKeeper.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs

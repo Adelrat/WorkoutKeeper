@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Routing.Template;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -27,10 +28,17 @@ namespace WorkoutKeeper
         public void ConfigureServices(IServiceCollection services)
         {
             // получаем строку подключения из файла конфигурации
-            string connection = Configuration.GetConnectionString("DefaultConnection");
+            string connection1 = Configuration.GetConnectionString("DefaultConnection");
             // добавляем контекст MobileContext в качестве сервиса в приложение
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connection));
+                options.UseSqlServer(connection1));
+            // добавление БД пользователей
+            string connection2 = Configuration.GetConnectionString("IdentityConnection");
+            services.AddDbContext<AppIdentityDbContext>(options =>
+                options.UseSqlServer(connection2));
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<AppIdentityDbContext>();
+
             services.AddTransient<ITrainingRepository, EFTrainingRepository>();
             services.AddControllersWithViews(mvcOtions =>
             {
@@ -44,6 +52,10 @@ namespace WorkoutKeeper
         {
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
+
+            app.UseAuthentication();    // подключение аутентификации
+            app.UseAuthorization();
+
             //разобраться с маршрутизацией!!
             app.UseRouting();
             app.UseEndpoints(endpoints =>

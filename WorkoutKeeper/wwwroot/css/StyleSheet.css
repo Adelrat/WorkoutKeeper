@@ -114,3 +114,10 @@ body, html {
     right: -15%;
     position: relative;
 }
+.registration{
+    padding:20px;
+}
+.registration_label{
+    margin:6px;
+    padding:6px;
+}
