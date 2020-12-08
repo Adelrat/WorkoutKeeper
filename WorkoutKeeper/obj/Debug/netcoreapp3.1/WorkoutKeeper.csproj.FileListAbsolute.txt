@@ -86,3 +86,4 @@ C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\bin\Debug\netcoreapp3.1\Mic
 C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\WorkoutKeeper.csproj.CoreCompileInputs.cache
 C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\WorkoutKeeper.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\HP\source\repos\WorkoutKeeper\WorkoutKeeper\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs

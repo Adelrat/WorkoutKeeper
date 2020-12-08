@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WorkoutKeeper.Controllers
 {
-    public class CustomTraining : Controller
+    public class CustomTrainingController : Controller
     {
         public IActionResult Index()
         {
