@@ -8,6 +8,7 @@ namespace WorkoutKeeper.Models.Views
 {
     public class LoginViewModel
     {
+
         [Required]
         [Display(Name ="EMail")]
         public string Email { get; set; }
@@ -15,6 +16,7 @@ namespace WorkoutKeeper.Models.Views
         [DataType(DataType.Password)]
         [Display(Name = "Пароль")]
         public string Password { get; set; }
+        
 
         [Display(Name = "Запомнить?")]
         public bool RememberMe { get; set; }

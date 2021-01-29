@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\AppIdentityDb\20210102151220_ACW2.cs" />
+    <Compile Remove="Migrations\AppIdentityDb\20210102151220_ACW2.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="bundleconfig.json" />
   </ItemGroup>
 

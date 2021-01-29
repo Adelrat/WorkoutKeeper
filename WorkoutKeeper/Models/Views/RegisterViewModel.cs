@@ -9,6 +9,9 @@ namespace WorkoutKeeper.Models.Views
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Имя")]
+        public string UserName { get; set; }
+        [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
 

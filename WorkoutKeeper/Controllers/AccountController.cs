@@ -29,11 +29,12 @@ namespace WorkoutKeeper.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = new User { Email = model.Email, UserName = model.Email, Year = model.Year };
+                User user = new User { Email = model.Email, UserName = model.Email, Year = model.Year, NormalizedUserName= model.UserName};
                 // добавляем пользователя
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    ViewBag.UserLayout = true;
                     // установка куки
                     await _signInManager.SignInAsync(user, false);
                     return RedirectToAction("Index", "CustomTraining");
@@ -64,6 +65,7 @@ namespace WorkoutKeeper.Controllers
                     await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {
+                    ViewBag.UserLayout = true;
                     // проверяем, принадлежит ли URL приложению
                     if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
                     {
@@ -71,7 +73,9 @@ namespace WorkoutKeeper.Controllers
                     }
                     else
                     {
+            
                         return RedirectToAction("Index", "CustomTraining");
+                       
                     }
                 }
                 else
